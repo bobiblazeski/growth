@@ -1,0 +1,26 @@
+{
+  "name": "growth",
+  "version": "1.0.0",
+  "description": "growth",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobiblazeski/growth.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bobiblazeski/growth/issues"
+  },
+  "homepage": "https://github.com/bobiblazeski/growth#readme",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "ramda": "^0.15.1"
+  }
+}
