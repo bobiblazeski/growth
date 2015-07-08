@@ -63,9 +63,14 @@ Demography.groupCohorts = function (cohorts, groupSize) {
         keys = R.sortBy(function (groupName) {
             return parseInt(groupName.substr(0, groupName.indexOf('-')));
         },R.keys(groups));
-    return R.map(function (key) {
-        return R.merge({group: key}, {size: R.sum(R.pluck('size',groups[key]))});
-    },keys);
+    return R.reduce(function (acc,key) {  
+        console.log(acc,key);
+        var size = Math.round(R.sum(R.pluck('size',groups[key]))/2);
+        return acc.concat([
+            R.merge({startAge: key}, { gender:'Male', size: size}),
+            R.merge({startAge: key}, { gender:'Female', size: -size})
+        ]);
+    },[], keys);
 };
 
 Demography.addGroup = function (cohorts, size) {
